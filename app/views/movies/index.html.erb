@@ -1,0 +1,31 @@
+<article>
+	<% @movies.each do |movie| %>
+	    <header id="content-header">
+	    	<h2><%= link_to movie.title, movie %></h2>
+	    	<div class = "mage">
+	      	<%= image_tag(movie.inmage) %>
+	      </div>
+	      <br>
+	      <h3>Cast: <%=movie.cast %></h3>
+	    </header>
+	    <p>
+	      <%= truncate(movie.description, length: 40, separator: ' ') %>
+	    </p>
+	    <div class="ztuff">
+		    <table>
+		      <tr>
+		        <th>Rating:</th>
+		        <td><%= movie.rating %></td>
+		      </tr>
+		      <tr>
+		        <th>Duration:</th>
+		        <td><%= movie.duration %></td>
+		      </tr>
+		      <tr>
+		        <th>Total Gross:</th>
+		        <td><%= format_total_gross(movie) %></td>
+		      </tr>
+		    </table>
+	  	</div>
+	<% end %>
+</article>

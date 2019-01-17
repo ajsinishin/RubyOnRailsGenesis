@@ -1,0 +1,46 @@
+<article>
+	<%= stylesheet_link_tag "crispy.css" %>
+  <header>
+    <div class = "titlez">
+      <h1><%= @movie.title %></h1>
+    </div>
+  </header>
+  <div class = "pic">
+   <h2>Poster</h2>
+  </div>
+  <div class = "mage">
+  <%= image_tag @movie.inmage %>
+  </div>
+  <div class = "desc">
+    <h2>Description</h2>
+  </div>
+  <div class = "stuff">
+    <p>
+      <%= @movie.description %>
+    </p>
+    <h3>Rating</h3>
+    <p>
+      <%= @movie.rating %>
+    </p>
+    <h3>Released On</h3>
+    <p>
+      <%= @movie.released_on %>
+    </p>
+    <h3>Total Gross</h3>
+    <p>
+      <%= format_total_gross(@movie) %>
+    </p>
+
+
+  <%= link_to pluralize(@movie.reviews.size, "review"), 
+              movie_reviews_path(@movie) %>
+    <%= link_to("All Movies", root_path) %>
+    <%= link_to "Edit", edit_movie_path(@movie) %>
+    <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: 'Are you sure?' }%>
+  </div>
+    <footer>
+  <%= link_to "Write Review", new_movie_review_path(@movie),
+               class: 'button ok review' %>
+
+</footer>
+</article>

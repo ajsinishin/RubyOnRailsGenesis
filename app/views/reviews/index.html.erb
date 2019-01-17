@@ -1,0 +1,12 @@
+<ol>
+  <% @review.each do |review| %>
+    <li>
+      <p>
+        <%= pluralize(review.stars, 'star') %> by <%= review.name %>:
+      </p> 
+      <p>
+        <%= review.comment %>
+      </p>
+    </li>
+  <% end %>
+</ol>
