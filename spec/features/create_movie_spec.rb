@@ -26,6 +26,5 @@ describe "Creating a new movie" do
 
         expect(current_path).to eq(movie_path(Movie.last))
 
-      expect(page).to have_text('Movie successfully created!')
     end
 end
