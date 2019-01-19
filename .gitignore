@@ -21,3 +21,7 @@
 /yarn-error.log
 
 .byebug_history
+.rspec
+.ruby-gemset
+.ruby-version
+
