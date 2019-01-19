@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Creating a new movie" do
   it "saves the movie and shows the new movie's details" do
     visit movies_url
-
+    end
     click_link 'Add New Movie'
 
     expect(current_path).to eq(new_movie_path)
@@ -28,3 +28,4 @@ describe "Creating a new movie" do
     expect(current_path).to eq(movie_path(Movie.last))
 
   expect(page).to have_text('Movie successfully created!')
+end
